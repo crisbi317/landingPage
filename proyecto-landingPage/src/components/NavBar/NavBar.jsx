@@ -1,5 +1,5 @@
-import raissaLogo from '../assets/raissa.png'
-import CartWidget from './CartWidget'
+import raissaLogo from '../../assets/raissa.png'
+import CartWidget from '../CartWidget/CartWidget'
 import './NavBar.css'
 
 function NavBar() {
@@ -23,7 +23,7 @@ function NavBar() {
                <a className="nav-link" href="#">Contacto</a>
             </li>
         </ul>
-        <a className="navbar-brand contCartWidget">
+        <a className="navbar-brand" src="#">
           
             <CartWidget cantidad={5}/>
           
