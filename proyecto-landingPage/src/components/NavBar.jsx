@@ -6,11 +6,12 @@ function NavBar() {
   
   return (
     <>
-    <nav className='d-flex justify-content-between container'>
-        <div className="contIconLogo">
-          <a href="#">
-              <img src={raissaLogo} alt="Logo raissa" className="iconoLogo"/></a>
-        </div>
+    <nav className='navbar bg-body-tertiary' data-bs-theme="light">
+      <div className='container-fluid'>
+        <a class="navbar-brand" href="#">
+          <img src={raissaLogo} alt="Logo raissa" width="60" height="54" className="iconoLogo"/>
+        </a>
+      
         <ul className="nav justify-content-center">
            <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="#">Inicio</a>
@@ -22,10 +23,11 @@ function NavBar() {
                <a className="nav-link" href="#">Contacto</a>
             </li>
         </ul>
-        <div className="contCartWidget">
+        <a className="navbar-brand contCartWidget">
           
             <CartWidget cantidad={5}/>
           
+        </a>
         </div>
       </nav>
       

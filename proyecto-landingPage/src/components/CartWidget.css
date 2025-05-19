@@ -2,3 +2,9 @@
     width: 80%;
     margin: 0;
 }
+span{
+    color: rgb(26, 24, 24);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+}

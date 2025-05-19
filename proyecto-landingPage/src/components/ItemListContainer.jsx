@@ -6,7 +6,7 @@ function ItemListContainer({greetings}) {
 
   return (
     <>
-      <p>{greetings}</p>
+      <h2>{greetings}</h2>
     </>
   )
 }

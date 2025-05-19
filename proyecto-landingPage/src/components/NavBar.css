@@ -1,6 +1,13 @@
-.iconoLogo{
-    width: 40%;
-    padding: 0;
-    margin: 0;
+.navbar {
+
+  color: rgb(81, 46, 3);
+  
 }
 
+.nav-link {
+  color: rgb(81, 46, 3);
+  text-decoration: none;
+}
+.nav-link:active {
+  color: rgb(18, 15, 12);
+}
