@@ -1,3 +1,12 @@
 .card{
     width: 18rem;
 }
+.btn {
+    width: 100%;
+    margin-bottom: 1%;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}

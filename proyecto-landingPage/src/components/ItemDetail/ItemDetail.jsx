@@ -3,13 +3,13 @@ import './ItemDetail.css';
 import {useEffect, useState} from 'react';
 import getProducts from '../../services/mockService';
 import Loader from '../Loader/Loader';  
-//import Contador from '../Contador/Contador';
+import Contador from '../Contador/Contador';
 
 function ItemDetail() {
     const {id} = useParams();
-    const [producto, setProducto] = useState({});
     const [loading, setLoading] = useState(true);
-
+    const [producto, setProducto] = useState({});
+    
     useEffect(() => {
         getProducts().then(result => {
             const product = result.find(el => el.id === id);
@@ -17,10 +17,6 @@ function ItemDetail() {
             setLoading(false);
         }).catch((err)=> { alert(err)});
     }, []);
-
-   if (loading) {
-        return <Loader />;
-    };
 
     return (
         loading ? <Loader /> :
@@ -35,10 +31,11 @@ function ItemDetail() {
                     <div>
                         <p className="card-price">$ {producto.price}</p>
                     </div>
+                    
                     <Link to={`/`}>
                         <button className="card-button">Volver al inicio</button>
                     </Link>
-            
+                <Contador />
                     <button className="card-button">Agregar al carrito</button>
                 </div>
             </div>
