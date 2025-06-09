@@ -6,13 +6,13 @@ function CartWidget({cantidad}) {
   
 
   return (
-    <>
+    
       <p>
           <img src={cartLogo} className="logo" alt="Carrito logo" /><span>{cantidad}</span></p>
              
              
-    </>
-  )
-}
+    
+  );
+};
 
-export default CartWidget
+export default CartWidget;

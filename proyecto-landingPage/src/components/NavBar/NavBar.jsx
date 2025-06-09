@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import raissaLogo from '../../assets/raissa.png'
 import CartWidget from '../CartWidget/CartWidget'
 import './NavBar.css'
@@ -5,10 +6,10 @@ import './NavBar.css'
 function NavBar() {
   
   return (
-    <>
+    
     <nav className='navbar bg-body-tertiary' data-bs-theme="light">
       <div className='container-fluid'>
-        <a class="navbar-brand" href="#">
+        <a className="navbar-brand" href="#">
           <img src={raissaLogo} alt="Logo raissa" width="60" height="54" className="iconoLogo"/>
         </a>
       
@@ -17,7 +18,15 @@ function NavBar() {
               <a className="nav-link active" aria-current="page" href="#">Inicio</a>
             </li>
             <li className="nav-item">
-               <a className="nav-link" href="#">Productos</a>
+               <ul className="nav flex-column">
+                <li className="nav-item">
+                  <Link to="/categoria/remeras">Remeras</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/categoria/pantalones">Pantalones</Link></li>
+                <li className="nav-item">
+                  <Link to="/categoria/camperas">Camperas</Link></li>
+               </ul>
             </li>
             <li className="nav-item">
                <a className="nav-link" href="#">Contacto</a>
@@ -31,7 +40,7 @@ function NavBar() {
         </div>
       </nav>
       
-    </>
+    
   )
 }
 
