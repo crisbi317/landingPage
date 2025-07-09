@@ -3,8 +3,16 @@
     margin: 0;
 }
 span{
-    color: rgb(26, 24, 24);
+    color: rgb(17, 17, 17);
     font-size: 1.5rem;
     font-weight: bold;
     margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    position: relative;
+    top: -1.5rem;
+    left: 1.5rem;
+
+    background-color: rgb(245, 240, 148);
+    border-radius: 50%;
+    padding: 0.2rem 0.5rem;
 }

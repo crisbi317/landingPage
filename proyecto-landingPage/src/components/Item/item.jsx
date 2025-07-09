@@ -1,9 +1,11 @@
 import {Link} from 'react-router';
+import { useAppContext } from '../../Context/Context';
 import './item.css'
 
 
 function Item(props) {
   const {id, title, descripcion, price, img} = props;
+  const { agregarAlCarrito } = useAppContext();
     return (
   
       <div className="card">
@@ -15,7 +17,9 @@ function Item(props) {
           <Link to={`/detalle/${id}`}>
             <button className="btn btn-primary">ver detalle</button>
           </Link>
-          <button className="btn btn-primary" onClick={()=> console.log("vas a agregar al carrito a", title)}>Agregar al carrito</button>
+          <button className="btn btn-primary" 
+             onClick={() => agregarAlCarrito({ id, price, title, cantidad: 1 })}>
+          Agregar al carrito</button>
         </div>
       </div>   
              

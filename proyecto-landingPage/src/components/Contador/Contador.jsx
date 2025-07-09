@@ -1,7 +1,15 @@
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import './Contador.css';
-function Contador() {
+function Contador({ cantidad, restarCantidad, sumarCantidad }) {
+    return (
+        <div className="contador">
+            <button className="btn btn-secondary" onClick={restarCantidad}>-</button>
+            <p>{cantidad}</p>
+            <button className="btn btn-secondary" onClick={sumarCantidad}>+</button>
+        </div>
+    );
+/*function Contador() {
   const [cantidad, setCantidad] = useState(1);
   function restarCantidad() {
         if (cantidad > 1) {
@@ -28,7 +36,7 @@ function Contador() {
         Agregar al carrito
       </button>
     </div>
-  );
+  );*/
 }
 
 export default Contador;

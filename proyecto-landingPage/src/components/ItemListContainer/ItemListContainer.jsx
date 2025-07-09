@@ -9,7 +9,7 @@ function ItemListContainer() {
     const [allProducts, setAllProducts] = useState([]);
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
-
+    //const [carrito, setCarrito] = useState([]);
     const { categoria } = useParams();
 
    const filterProducts = (arrayProducts, category) => {
@@ -21,13 +21,13 @@ function ItemListContainer() {
         
     };
 
-  
+ 
+
   useEffect(() => {
         if (allProducts.length === 0) {
             setLoading(true);
             getProducts()
                 .then(result => {
-                  
                     setAllProducts(result);
                     filterProducts(result, categoria);
                     setLoading(false);
