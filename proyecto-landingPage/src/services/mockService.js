@@ -56,10 +56,20 @@ const products = [
   }
 ]
 function getProducts() {
- return new Promise( (resolve, reject) => {  
+ /* return new Promise( (resolve, reject) => {  
     setTimeout( () => {
       resolve(products)
     }, 3000)
-})
-}
+})*/
+return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      // Simulación: si products no está definido, se rechaza la promesa
+      if (typeof products !== 'undefined') {
+        resolve(products);
+      } else {
+        reject(new Error('No se pudieron cargar los productos'));
+      }
+    }, 2000);
+  });
+  }
 export default getProducts;
