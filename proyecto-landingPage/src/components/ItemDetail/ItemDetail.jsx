@@ -57,7 +57,7 @@ function ItemDetail() {
                     <Link to={`/`}>
                         <button className="card-button">Volver al inicio</button>
                     </Link>
-                  <Contador cantidad={cantidad} sumarCantidad={sumarCantidad} restarCantidad={restarCantidad} />
+                    <Contador cantidad={cantidad} sumarCantidad={sumarCantidad} restarCantidad={restarCantidad} />
                     <button className="card-button" onClick={agregarCantidadAlCarrito}>Agregar al carrito</button>
                 </div>
             </div>

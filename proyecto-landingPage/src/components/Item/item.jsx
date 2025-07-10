@@ -18,7 +18,7 @@ function Item(props) {
             <button className="btn btn-primary">ver detalle</button>
           </Link>
           <button className="btn btn-primary" 
-             onClick={() => agregarAlCarrito({ id, price, title, cantidad: 1 })}>
+             onClick={() => agregarAlCarrito({ ...props, cantidad: 1 })}>
           Agregar al carrito</button>
         </div>
       </div>   

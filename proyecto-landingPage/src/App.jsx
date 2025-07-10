@@ -6,8 +6,8 @@ import './App.css';
 import ItemDetail from './components/ItemDetail/ItemDetail';
 import NotFound from './components/NotFound/NotFound';
 import { ContextProvider } from './Context/Context';
-
-import Contacto from './components/Contacto/Contacto';
+import Carrito from './components/Carrito/Carrito';
+import CheckOut from './components/CheckOut/CheckOut';
 
 function App() {
     return (
@@ -18,7 +18,9 @@ function App() {
            <Route path="/" element={<ItemListContainer />} />
            <Route path="/categoria/:categoria" element={<ItemListContainer />} />
             <Route path="/detalle/:id" element={<ItemDetail />} />
-            <Route path="/contacto" element={<Contacto />} />
+            <Route path="/carrito" element={<Carrito />} />
+            <Route path="/checkout" element={<CheckOut />} />
+
             <Route path="*" element={<NotFound />} />
         </Routes>
     </BrowserRouter>

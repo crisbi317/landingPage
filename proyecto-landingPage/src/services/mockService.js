@@ -55,12 +55,9 @@ const products = [
     category:"camperas"
   }
 ]
+
 function getProducts() {
- /* return new Promise( (resolve, reject) => {  
-    setTimeout( () => {
-      resolve(products)
-    }, 3000)
-})*/
+
 return new Promise((resolve, reject) => {
     setTimeout(() => {
       // Simulación: si products no está definido, se rechaza la promesa
