@@ -6,7 +6,8 @@ import Loader from '../Loader/Loader.jsx';
 import { useParams } from 'react-router';
 import { db } from '../../firebaseConfig.js';
 import { collection, getDocs } from 'firebase/firestore';
-//import { useAppContext } from '../../context/context.jsx'; 
+
+
 
 function ItemListContainer() {
 
@@ -14,15 +15,10 @@ function ItemListContainer() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     
-    //const [carrito, setCarrito] = useState([]);
+    
     const { categoria } = useParams();
     const productCollection = collection(db, 'productos');
-   // const ordenesCollection = collection(db, 'ordenes');
-
-    //const { carrito, limpiarCarrito } = useAppContext();
-
-    //const navigate = useNavigate();
-   // const { agregarAlCarrito } = useAppContext();
+  
    const filterProducts = (arrayProducts, category) => {
         if (category) {
             setProducts(arrayProducts.filter(el => el.category === categoria));

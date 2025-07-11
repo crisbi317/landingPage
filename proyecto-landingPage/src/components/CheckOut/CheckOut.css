@@ -36,4 +36,13 @@
     border: none;
     cursor: pointer;
 }
-.
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+.checkOut-container .error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}

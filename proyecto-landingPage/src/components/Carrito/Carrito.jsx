@@ -3,7 +3,6 @@ import './Carrito.css';
 import { useState, useEffect } from 'react';
 import Loader from '../Loader/Loader.jsx';
 
-
 import { useAppContext } from '../../Context/Context';
 
 function Carrito() {

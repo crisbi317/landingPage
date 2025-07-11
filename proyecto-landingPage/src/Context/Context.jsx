@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import toast from "react-hot-toast";
 
 // 1. app que voy a utilizar
 const AppContext = createContext();
@@ -9,7 +10,9 @@ export const useAppContext = () => useContext(AppContext);
 // 2. crea el proveedor del contexto luego agrega en app.jsx el ContextProvider y envuelve el contenido
 export const ContextProvider = (props) => {
     const [carrito, setCarrito] = useState([]);
-
+    
+    
+   
     const agregarAlCarrito = (producto) => {
         
        if (carrito.some(el => el.id === producto.id)) {
@@ -25,28 +28,29 @@ export const ContextProvider = (props) => {
                 };
             });
             setCarrito(nuevoCarrito);
-            console.log("Producto agregado al carrito:", producto);
+   
         } else {
             setCarrito([...carrito, producto]);
-            console.log("Producto agregado al carrito:", producto);
+    
         };
-          
+          toast.success(`Agregaste ${producto.cantidad} ${producto.title} al carrito`);
     };
 
     const limpiarCarrito = () => {
         setCarrito([]); 
+        toast.success("Carrito limpiado");
         console.log("Carrito limpiado");
     }   
 
     const eliminarDelCarrito = (id) => {
         const nuevoCarrito = carrito.filter(element => element.id !== id);  
         setCarrito(nuevoCarrito);
-        console.log("Producto eliminado del carrito:", id);
+        toast.error("Producto eliminado del carrito");
     }
 
     const cantidadTotal = () => {
         return carrito.reduce((acc, value) => acc += value.cantidad * value.price, 0);    
-    }
+    };
     
 
     // 3. agregar props

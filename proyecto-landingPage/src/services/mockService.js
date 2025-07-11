@@ -1,5 +1,5 @@
 //crear una promesa que simula solucion de array de productos luego de 3 seg
-const products = [
+/*const products = [
   {
     id:"1",
     title: "Camisa casual",
@@ -54,7 +54,7 @@ const products = [
     stock:5,
     category:"camperas"
   }
-]
+]*/
 
 function getProducts() {
 
@@ -66,7 +66,7 @@ return new Promise((resolve, reject) => {
       } else {
         reject(new Error('No se pudieron cargar los productos'));
       }
-    }, 2000);
+    }, 3000);
   });
   }
 export default getProducts;

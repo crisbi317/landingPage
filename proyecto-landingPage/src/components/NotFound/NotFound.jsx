@@ -4,7 +4,7 @@ function NotFound() {
 
     return (
         <div className='notfound-container'>
-            <p>Te confundiste de ruta</p>
+            <p>Te podes contactar telefonicamente a 22222-2222222</p>
             <Link to="/"><button>Volvé al inicio</button></Link>
         </div>
     );

@@ -8,11 +8,14 @@ import NotFound from './components/NotFound/NotFound';
 import { ContextProvider } from './Context/Context';
 import Carrito from './components/Carrito/Carrito';
 import CheckOut from './components/CheckOut/CheckOut';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
     return (
+      
       <ContextProvider>
-      <BrowserRouter>
+       <Toaster />
+       <BrowserRouter>
         <NavBar/>
         <Routes>
            <Route path="/" element={<ItemListContainer />} />

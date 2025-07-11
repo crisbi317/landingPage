@@ -1,10 +1,11 @@
 import {Link, useParams} from 'react-router';
 import './ItemDetail.css';
 import {useEffect, useState} from 'react';
-import getProducts from '../../services/mockService';
+import getAllProducts from "../../services/getAllProducts";
 import Loader from '../Loader/Loader';  
 import Contador from '../Contador/Contador';
-import { useAppContext } from '../../Context/Context';
+import {useAppContext} from '../../Context/Context';
+
 
 function ItemDetail() {
     const {id} = useParams();
@@ -31,14 +32,24 @@ function ItemDetail() {
         setCantidad(1);
     };
 
-    useEffect(() => {
-        getProducts().then(result => {
-            const product = result.find(el => el.id === id);
-            console.log("Producto encontrado:", product);
-            setProducto(product);
-            setLoading(false);
-        }).catch((err)=> { alert(err)});
-    }, []);
+useEffect(() => {
+    getAllProducts()
+      .then((productos) => {
+        const product = productos.find((p) => p.id === id);
+        if (product) {
+          setProducto(product);
+        } else {
+          alert("Producto no encontrado");
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        alert("Error cargando productos");
+      })
+      .finally(() => setLoading(false));
+  }, [id]);
+
+
   console.log(producto);
     return (
         loading ? <Loader /> :
